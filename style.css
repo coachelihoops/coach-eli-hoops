@@ -1,0 +1,1624 @@
+:root {
+
+            --bg-color: #0b0c10;
+
+            --surface-color: #121417;
+
+            --accent-color: #c5a059; /* Championship Gold */
+
+            --text-color: #ffffff;
+
+            --muted-text: #a0aab2;
+
+            --nav-height: 70px;
+
+        }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+            /* This ensures your sections don't get tucked under your fixed white navbar */
+
+            scroll-padding-top: 90px;
+
+        }
+
+
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+        }
+
+
+
+        body {
+
+                background-color: #0b0c10;
+
+                color: var(--text-color);
+
+                line-height: 1.6;
+
+                padding-top: var(--nav-height);
+
+                position: relative;
+
+                min-height: 100vh;
+
+            }
+
+
+
+            /* This creates a dedicated, faded background layer that won't affect text readability */
+
+            body::before {
+
+                content: "";
+
+                position: fixed;
+
+                top: var(--nav-height);
+
+                left: -10vw; /* Pushes the left side slightly out to give the text breathing room */
+
+                width: 55vw; /* Increased width so the logo scales up massive and intentional */
+
+                height: calc(100vh - var(--nav-height));
+
+               
+
+                /* Going back to the transparent PNG asset file */
+
+                background-image: url('CEBackground No Logo Transparent.png');
+
+                background-repeat: no-repeat;
+
+                background-position: left center;
+
+               
+
+                /* Using cover tells the browser to fill the space smoothly without shrinking the flat edge into view */
+
+                background-size: cover;
+
+               
+
+                /* Clean, soft opacity overlay with normal colors restored */
+
+                opacity: 0.02; /* Cut it roughly in half to push it deeper into the shadows */
+
+               
+
+                z-index: -1;
+
+                pointer-events: none;
+
+            }
+
+
+
+        /* Fixed Navigation Bar at the Top */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: var(--nav-height);
+
+            background-color: #ffffff;
+
+            padding: 0 2rem;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+            display: flex;
+            justify-content: space-between; /* Keeps logo and nav separate */
+            align-items: center;
+            padding: 0 1rem; /* Reduced padding for mobile */
+            flex-wrap: wrap; /* Allows items to wrap if they don't fit */
+
+        }
+
+
+
+        /* Combined Logo and Brand Wrapper */
+
+        .brand-logo-container {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.75rem; /* Perfect spacing between shield and text */
+
+            height: 100%;
+
+        }
+
+
+
+        /* Custom styling for your Photoshop asset */
+
+        .brand-logo-container img {
+
+            height: 50px; /* Scales down smoothly inside your 70px nav bar */
+
+            width: auto;
+
+            object-fit: contain;
+
+        }
+
+
+
+        .logo-text {
+
+            font-size: 1.4rem;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #0b0c10;
+
+        }
+
+
+
+        .logo-text span {
+
+            color: var(--accent-color);
+
+        }
+
+
+
+        nav {
+
+            display: flex;
+
+            gap: 1.5rem;
+
+        }
+
+
+
+        nav a {
+
+            color: #333333;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            font-size: 0.85rem;
+
+            letter-spacing: 0.5px;
+
+            padding: 0.5rem 0.2rem;
+
+            border-bottom: 2px solid transparent;
+
+            transition: border-color 0.2s, color 0.2s;
+
+        }
+
+
+
+        nav a:hover {
+
+            color: var(--accent-color);
+
+            border-color: var(--accent-color);
+
+        }
+
+
+
+        /* Split Hero Layout: Text Left, Contained Frame Right */
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            display: flex;
+            flex-direction: row; /* Forces items side-by-side */
+            align-items: center;    /* Centers everything */
+            justify-content: center; /* Creates space between text and image */
+            min-height: 60vh
+        }
+
+        .hero-container {
+            margin-bottom: 80px; /* Pushes the next section down */
+        }
+
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;    /* This centers the buttons and content horizontally */
+            text-align: center;     /* This centers the text paragraphs and headings */
+        }
+
+
+
+        .hero-text h1 {
+
+            font-size: 3.5rem;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: -0.5px;
+
+            line-height: 1.1;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+
+        .hero-text p {
+
+            font-size: 1.25rem;
+
+            color: var(--muted-text);
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        .hero-motto {
+
+            font-size: 1rem;
+
+            font-style: italic;
+
+            color: var(--accent-color);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 2rem;
+
+        }
+
+
+
+        .btn-wrapper {
+
+            display: flex;
+
+            gap: 1rem;
+
+        }
+
+
+
+        .btn {
+
+            display: inline-block;
+
+            background-color: var(--accent-color);
+
+            color: #000000;
+
+            padding: 1rem 2.5rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            letter-spacing: 0.5px;
+
+            border-radius: 4px;
+
+            transition: transform 0.2s, background-color 0.2s;
+
+            text-align: center;
+
+        }
+
+
+
+        .btn:hover {
+
+            transform: translateY(-2px);
+
+            background-color: #b38f4b;
+
+        }
+
+
+
+        .btn-secondary {
+
+            background-color: transparent;
+
+            color: #ffffff;
+
+            border: 2px solid #ffffff;
+
+        }
+
+       
+
+        .btn-secondary:hover {
+
+            background-color: #ffffff;
+
+            color: #000000;
+
+        }
+
+        /* Contained Media Frame with Border */
+
+        .media-frame {
+
+            position: relative;
+
+            width: 100%;
+            max-width: 450px;
+
+            aspect-ratio: 4 / 5; /* Perfect vertical/portrait photo crop */
+
+            border: 3px solid var(--accent-color);
+
+            border-radius: 8px;
+
+            background-color: var(--surface-color);
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            /* Change 'cover' to 'contain' to stop the cropping */
+            background-size: contain !important; 
+            background-repeat: no-repeat;
+            background-position: top center;
+            
+            /* If you are using an <img> tag inside, use this instead: */
+            /* object-fit: contain; */
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            /* This ensures that whatever is inside the frame doesn't shrink */
+            flex-shrink: 0; 
+            }
+
+        /* Container needs relative positioning to stack absolute images */
+
+        .slideshow-inner {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .slide {
+
+            width: 100%;
+
+            height: 100%;
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            opacity: 0;
+
+            z-index: 1;
+
+            transition: opacity 1200ms linear; /* Controls the exact speed of the blend */
+
+        }
+
+
+
+        /* Keeps the active slide sitting cleanly on top */
+
+        .slide.active {
+
+            opacity: 1;
+
+            z-index: 2;
+
+        }
+
+
+
+        .slide:nth-child(1) { animation-delay: 0s; }
+
+        .slide:nth-child(2) { animation-delay: 4s; }
+
+        .slide:nth-child(3) { animation-delay: 8s; }
+
+
+
+        @keyframes imageFade {
+
+            0% { opacity: 0; }
+
+            10% { opacity: 1; }
+
+            33% { opacity: 1; }
+
+            43% { opacity: 0; }
+
+            100% { opacity: 0; }
+
+        }
+
+
+
+        /* Section anchors formatting */
+
+        .section-wrapper {
+
+            max-width: 1200px;
+
+            margin: 4rem auto;
+
+            padding: 2rem;
+
+            border-top: 1px solid #1a1e24;
+
+        }
+
+
+
+        .section-wrapper h2 {
+
+            font-size: 2rem;
+
+            text-transform: uppercase;
+
+            margin-bottom: 1.5rem;
+
+            letter-spacing: 1px;
+
+            border-left: 4px solid var(--accent-color);
+
+            padding-left: 1rem;
+
+        }
+
+
+
+        .photo-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+            gap: 1.5rem;
+
+        }
+
+
+
+        .photo-card {
+
+            background-color: var(--surface-color);
+
+            border-radius: 6px;
+
+            overflow: hidden;
+
+            aspect-ratio: 1 / 1;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+        }
+
+
+
+        .photo-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+       
+
+        /* Match the site's overall background and font */
+
+        #who-we-serve {
+
+            background: inherit; /* This pulls the same color as your page background */
+
+            font-family: inherit; /* This pulls the font used globally */
+
+            padding: 80px 20px;
+
+            text-align: center;
+
+        }
+
+
+
+        #who-we-serve h2 {
+
+            font-size: 2.5rem;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+            color: #ffffff;
+
+            margin-bottom: 50px;
+
+           
+
+            /* This adds the vertical gold line matching the About section */
+
+            padding-left: 20px;
+
+            border-left: 4px solid #c5a059;
+
+           
+
+            /* Ensure it aligns well with your grid */
+
+            text-align: left;
+
+            max-width: 1200px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        /* Ensure cards are transparent to let the main background show through */
+
+        .service-card {
+
+            background: transparent;
+
+            border: none; /* Remove the box look entirely if you want a cleaner flow */
+
+        }
+
+
+
+        .service-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            max-width: 1200px;
+
+            margin: 40px auto 0;
+
+            justify-items: start; /* This forces the grid to align left instead of center */
+
+        }
+
+
+
+        .service-card h3 {
+
+            color: #c5a059;
+
+            font-size: 1.1rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            padding-bottom: 15px;
+
+        }
+
+
+
+        /* Adds a small, elegant line under the title */
+
+        .service-card h3::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 30px;
+
+            height: 2px;
+
+            background: #c5a059;
+
+        }
+
+
+
+        .service-card p {
+
+            color: #999;
+
+            font-size: 0.95rem;
+
+            line-height: 1.6;
+
+            max-width: 250px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .about-section {
+
+            padding: 80px 0;
+
+            /* Changed from #0b0c10 to transparent so the body's logo background shines through */
+
+            background-color: transparent;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .about-container {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.2fr;
+
+            gap: 60px;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        /* Image Column Styling */
+
+        .about-image-wrapper {
+
+            position: relative;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        .about-img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: cover;
+
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Subtle gold rim */
+
+            border-radius: 8px;
+
+        }
+
+
+
+        /* Content Column Styling */
+
+        .section-title {
+
+            font-size: 2.5rem;
+
+            color: #ffffff;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+            letter-spacing: 1px;
+
+            border-left: 4px solid #d4af37; /* Clean gold vertical accent line */
+
+            padding-left: 15px;
+
+        }
+
+
+
+        .about-lead {
+
+            font-size: 1.2rem;
+
+            color: #d4af37; /* Gold accent tone */
+
+            font-weight: 600;
+
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .about-text {
+
+            font-size: 1rem;
+
+            color: #b3b3b3;
+
+            line-height: 1.7;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        /* Quick Stat Badges Layout */
+
+        .about-stats {
+
+            display: flex;
+
+            gap: 20px;
+
+            margin-top: 30px;
+
+        }
+
+
+
+        .stat-badge {
+
+            background: linear-gradient(135deg, #111317 0%, #1a1d24 100%);
+
+            border: 1px solid rgba(212, 175, 55, 0.15);
+
+            padding: 15px 20px;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+            flex: 1;
+
+        }
+
+
+
+        .stat-num {
+
+            display: block;
+
+            font-size: 1.4rem;
+
+            font-weight: 800;
+
+            color: #ffffff;
+
+            margin-bottom: 5px;
+
+        }
+
+
+
+        .stat-label {
+
+            display: block;
+
+            font-size: 0.75rem;
+
+            color: #888888;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        /* Film Room Section */
+
+        .film-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+            gap: 2rem;
+
+            margin-top: 2rem;
+
+        }
+
+
+
+        .film-card {
+
+            background-color: var(--surface-color);
+
+            border: 1px solid #1a1e24;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+            transition: transform 0.2s, border-color 0.2s;
+
+        }
+
+
+
+        .film-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color: var(--accent-color);
+
+        }
+
+
+
+        .video-thumbnail-wrapper {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9; /* Perfect wide video format */
+
+            background-color: #000;
+
+        }
+
+
+
+        .video-thumbnail-wrapper img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: 0.75;
+
+            transition: opacity 0.2s;
+
+        }
+
+
+
+        .film-card:hover .video-thumbnail-wrapper img {
+
+            opacity: 0.9;
+
+        }
+
+
+
+        /* Tactical Play Button Overlay */
+
+        .play-overlay {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 50px;
+
+            height: 50px;
+
+            background-color: rgba(197, 160, 89, 0.9); /* Championship Gold */
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+
+            cursor: pointer;
+
+        }
+
+
+
+        .play-overlay::after {
+
+            content: '';
+
+            display: block;
+
+            width: 0;
+
+            height: 0;
+
+            border-style: solid;
+
+            border-width: 8px 0 8px 14px;
+
+            border-color: transparent transparent transparent #000000;
+
+            margin-left: 3px;
+
+        }
+
+
+
+        .film-content {
+
+            padding: 1.5rem;
+
+        }
+
+
+
+        .film-tag {
+
+            display: inline-block;
+
+            background-color: rgba(197, 160, 89, 0.1);
+
+            color: var(--accent-color);
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            padding: 0.25rem 0.6rem;
+
+            border-radius: 4px;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 0.75rem;
+
+        }
+
+
+
+        .film-content h3 {
+
+            font-size: 1.2rem;
+
+            text-transform: uppercase;
+
+            margin-bottom: 0.5rem;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+
+        .film-content p {
+
+            color: var(--muted-text);
+
+            font-size: 0.9rem;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* Service Card Styling */
+
+        .service-card {
+            background: linear-gradient(135deg, #111317 0%, #1a1d24 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Fixed from "transform" */
+            height: 100%;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+
+
+        .service-body {
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex-grow: 1; /* Forces the body area to fill all remaining vertical space */
+
+        }
+
+
+
+        .service-btn {
+
+            margin-top: auto; /* Magically pushes the button to the absolute bottom of the card content */
+
+        }
+
+
+
+        .service-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: rgba(212, 175, 55, 0.3);
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        /* Featured Card Highlights (Middle Card) */
+
+        .featured-card {
+
+            border-color: rgba(212, 175, 55, 0.4);
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        .featured-badge {
+
+            position: absolute;
+
+            top: -15px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: #d4af37;
+
+            color: #000;
+
+            font-size: 0.75rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            padding: 5px 15px;
+
+            border-radius: 20px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        /* Card Header Content */
+
+        .service-tag {
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #666;
+
+            display: block;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .service-header h3 {
+
+            color: #fff;
+
+            font-size: 1.4rem;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+
+        .price {
+
+            font-size: 2.2rem;
+
+            font-weight: 800;
+
+            color: #fff;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .per-session {
+
+            font-size: 0.9rem;
+
+            color: #666;
+
+            font-weight: 400;
+
+            text-transform: lowercase;
+
+        }
+
+
+
+        #founding-members {
+
+            background: transparent !important; /* Force the main section transparent */
+
+            padding: 60px 20px;
+
+            margin-top: 40px;
+
+            text-align: center;
+
+        }
+
+
+
+        .cta-box {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            padding: 40px;
+
+            border: 1px solid #c5a059;
+
+            background: transparent !important; /* This forces the box background to be transparent */
+
+        }
+
+
+
+        .cta-box h3 {
+
+            color: #c5a059;
+
+            font-size: 1.75rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .cta-box p {
+
+            color: #cccccc;
+
+            font-size: 1rem;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        /* Link as a professional button */
+
+        .cta-box .book-btn {
+
+            display: inline-block;
+
+            padding: 12px 30px;
+
+            border: 1px solid #c5a059;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .cta-box .book-btn:hover {
+
+            background: #c5a059;
+
+            color: #000000;
+
+        }
+
+        /* Card Body Content */
+
+        .service-body p {
+
+            color: #888;
+
+            font-size: 0.95rem;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .service-features {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0 0 35px 0;
+
+        }
+
+
+
+        .service-features li {
+
+            color: #b3b3b3;
+
+            font-size: 0.9rem;
+
+            margin-bottom: 12px;
+
+            position: relative;
+
+            padding-left: 20px;
+
+        }
+
+
+
+        /* Clean Custom Bullet Point Dot */
+
+        .service-features li::before {
+
+            content: "▪";
+
+            position: absolute;
+
+            left: 0;
+
+            color: #d4af37;
+
+            font-size: 0.8rem;
+
+        }
+
+
+
+        /* Buttons Inside Cards */
+
+        .service-btn {
+
+            display: block;
+
+            text-align: center;
+
+            padding: 14px;
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            font-size: 0.9rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            transition: all 0.2s ease;
+
+            border: 1px solid #fff;
+
+            color: #fff;
+
+            background: transparent;
+
+            margin-top: auto;
+
+        }
+
+
+
+        .service-btn:hover {
+
+            background: #fff;
+
+            color: #000;
+
+        }
+
+
+
+        .active-btn {
+
+            border-color: #d4af37;
+
+            background: #d4af37;
+
+            color: #000;
+
+        }
+
+
+
+        .active-btn:hover {
+
+            background: transparent;
+
+            color: #d4af37;
+
+            border-color: #d4af37;
+
+        }
+
+
+
+        /* Interactive Form States */
+
+        .booking-form input:focus,
+
+        .booking-form select:focus,
+
+        .booking-form textarea:focus {
+
+            border-color: rgba(212, 175, 55, 0.5) !important;
+
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+
+        }
+
+
+
+        .submit-btn:hover {
+
+            background: transparent !important;
+
+            color: #d4af37 !important;
+
+        }
+
+
+
+        footer {
+
+            text-align: center;
+
+            padding: 3rem 2rem;
+
+            color: var(--muted-text);
+
+            font-size: 0.9rem;
+
+            background-color: #08090a;
+
+        }
+
+
+
+        /* Add this right at the top of your external stylesheet (NOT inside the media query) 
+        to make sure the browser clears all default spacing */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Now, update your mobile media query block down below */
+        @media (max-width: 900px) {
+            header {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: auto !important;
+                padding: 0 5px !important; /* Reduce side padding to give more room */
+                margin-top: 0 !important; /* Forces the header to stick to the absolute top */
+                background: #ffffff !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            @media (max-width: 900px) {
+                /* 1. Force the container to stack vertically */
+                .hero-container {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                }
+
+                /* 2. Ensure the image takes full width and sits below */
+                .media-frame {
+                    width: 100% !important;
+                    margin-top: 20px !important; /* Space between text and image */
+                    order: 2; /* Explicitly puts it after the text (which is order 1) */
+                    flex: none !important; /* Prevents it from trying to shrink */
+                }
+            }
+
+            nav {
+                display: flex !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                margin-top: 12px !important;
+            }
+
+            nav ul {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap; /* Allows links to drop to a second line neatly if a screen is too narrow */
+                gap: 12px !important; /* Marginally tightened the gap so it fits mobile screens perfectly */
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 auto !important; /* Centered layout override */
+                width: 95% !important; /* Keeps it from hitting the exact edges of the screen */
+            }
+
+            nav a {
+                color: #111317 !important;
+                font-weight: bold !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.5px; /* Makes the all-caps links crisp and legible */
+                white-space: nowrap; /* Prevents the text from wrapping */
+                padding: 0 2px !important;  /* Minimal padding */
+                font-size: 11px !important; /* Smaller size is necessary to fit all items */
+                text-align: center;
+                white-space: nowrap;        /* This stops "FILM ROOM" from wrapping */
+            }
+
+            @media (max-width: 900px) {
+                .media-frame {
+                    width: 90% !important;   /* Allows it to be almost full width */
+                    height: 300px !important; /* Force a clear height on mobile */
+                    margin: 20px auto !important; /* Center it */
+                    display: block !important;
+                    background-size: cover !important; /* Ensures the image fills the space */
+                }
+            }
+            @media (max-width: 900px) {
+                /* Forces the 'Who We Serve' grid to stack vertically instead of side-by-side */
+                .service-grid {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    width: 90% !important;
+                    margin: 0 auto !important;
+                    padding: 0 !important;
+                }
+
+                /* Ensures the individual boxes don't overflow the container */
+                .service-card {
+                    width: 100% !important;
+                    margin-bottom: 20px !important;
+                }
+            }
+        }
