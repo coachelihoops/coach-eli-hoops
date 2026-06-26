@@ -291,6 +291,77 @@
             object-fit: cover;
         }
         
+        /* Match the site's overall background and font */
+        #who-we-serve {
+            background: inherit; /* This pulls the same color as your page background */
+            font-family: inherit; /* This pulls the font used globally */
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #who-we-serve h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 50px;
+            
+            /* This adds the vertical gold line matching the About section */
+            padding-left: 20px; 
+            border-left: 4px solid #c5a059; 
+            
+            /* Ensure it aligns well with your grid */
+            text-align: left; 
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Ensure cards are transparent to let the main background show through */
+        .service-card {
+            background: transparent; 
+            border: none; /* Remove the box look entirely if you want a cleaner flow */
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            justify-items: start; /* This forces the grid to align left instead of center */
+        }
+
+        .service-card h3 {
+            color: #c5a059;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        /* Adds a small, elegant line under the title */
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: #c5a059;
+        }
+
+        .service-card p {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
         .about-section {
             padding: 80px 0;
             /* Changed from #0b0c10 to transparent so the body's logo background shines through */
@@ -530,21 +601,21 @@
         }
 
         .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: transform; /* This helps maintain height stretch */
-    height: 100%; /* Force all cards in the grid to be the exact same height */
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: transform; /* This helps maintain height stretch */
+            height: 100%; /* Force all cards in the grid to be the exact same height */
+        }
 
-.service-body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Forces the body area to fill all remaining vertical space */
-}
+        .service-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Forces the body area to fill all remaining vertical space */
+        }
 
-.service-btn {
-    margin-top: auto; /* Magically pushes the button to the absolute bottom of the card content */
-}
+        .service-btn {
+            margin-top: auto; /* Magically pushes the button to the absolute bottom of the card content */
+        }
 
         .service-card:hover {
             transform: translateY(-5px);
@@ -604,6 +675,66 @@
             color: #666;
             font-weight: 400;
             text-transform: lowercase;
+        }
+
+        #founding-members {
+            background: transparent !important; /* Force the main section transparent */
+            padding: 60px 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid #c5a059;
+            background: transparent !important; /* This forces the box background to be transparent */
+        }
+
+        .cta-box h3 {
+            color: #c5a059;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Link as a professional button */
+        .cta-box .book-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #c5a059;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .cta-box .book-btn:hover {
+            background: #c5a059;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .service-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+            
+            .service-card {
+                width: 90% !important;
+                margin: 0 auto !important;
+            }
         }
 
         /* Card Body Content */
@@ -741,7 +872,7 @@
                     More than just a game. We're Building character and discipline to win off the court.
                 </p>
                 <div class="btn-wrapper">
-                    <a href="mailto:coacheli.hoops@gmail.com" class="btn">Book a Session</a>
+                    <a href="#services" class="btn">Book a Session</a>
                     <a href="#film-room" class="btn btn-secondary">View Film</a>
                 </div>
             </div>
@@ -794,6 +925,24 @@
             }
             </script>
 
+        </section>
+
+        <section id="who-we-serve">
+            <h2>Who We Serve</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Middle School</h3>
+                    <p>Building foundational mechanics and basketball IQ to dominate at the varsity level.</p>
+                </div>
+                <div class="service-card">
+                    <h3>High School</h3>
+                    <p>Developing specialized skill sets, physical conditioning, and mental toughness for recruitment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Collegiate</h3>
+                    <p>High-intensity, tactical preparation for intense systems established by colleges.</p>
+                </div>
+            </div>
         </section>
 
         <section id="about" class="about-section" style="width: 100%; overflow: hidden; box-sizing: border-box;">
@@ -908,7 +1057,7 @@
                 <div class="service-header">
                     <span class="service-tag">Individual Focus</span>
                     <h3>1-on-1 Elite Progression</h3>
-                    <div class="price">$XX <span class="per-session">/ session</span></div>
+                    <div class="price">$50 <span class="per-session">/ session</span></div>
                 </div>
                 <div class="service-body">
                     <p>Complete, hyper-personalized development tracking tailored specifically to your positional needs and individual goals.</p>
@@ -928,7 +1077,7 @@
                 <div class="service-header">
                     <span class="service-tag" style="color: #d4af37;">Game Translation</span>
                     <h3>Small Group Skill Lab</h3>
-                    <div class="price">$XX <span class="per-session">/ player</span></div>
+                    <div class="price">$35 <span class="per-session">/ player</span></div>
                 </div>
                 <div class="service-body">
                     <p>Designed for 3–5 serious players. Simulates real-time defensive pressure, forcing rapid decision-making and basketball IQ growth.</p>
@@ -964,6 +1113,14 @@
         </div>
     </div>
 </section>
+
+        <section id="founding-members">
+            <div class="cta-box">
+                <h3>Become a Founding Member</h3>
+                <p>I'm looking for 5 athletes dedicated to the process. Founding members receive priority booking, locked-in rates, and customized season planning.</p>
+                <a href="#services" class="book-btn">Secure Your Spot</a>
+            </div>
+        </section>
 
 <!-- Background changed to transparent to let your main site background blend through -->
             <section id="contact" style="padding: 100px 20px; background: transparent; color: #ffffff;">
