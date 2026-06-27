@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D3RWR04X3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3D3RWR04X3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="CELogoFavicon.png">
+    <title>Coach Eli | Player Development & Performance</title>
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header>
+        
+        <!-- Logo and brand text grouped together perfectly on the left -->
+        <div class="brand-logo-container">
+            <img src="CELogo.png" alt="CE Elite Shield Logo">
+            <div class="logo-text">COACH ELI<span> .HOOPS</span></div>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="film-room.html">FILM ROOM</a>
+            <a href="training.html">TRAINING</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        </header>
+
+        <!-- Background changed to transparent to let your main site background blend through -->
+            <section id="contact" style="padding: 100px 20px; background: transparent; color: #ffffff;">
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
+                    <h2 style="text-align: center; font-size: 2.5rem; color: #ffffff; margin-bottom: 10px;">PLAYER APPLICATION</h2>
+                    <p style="text-align: center; color: #d4af37; font-weight: 600; margin-bottom: 40px;">MORE THAN JUST A GAME. SUBMIT YOUR DETAILS TO TRAIN.</p>
+                    
+                    <!-- Added the id="app-form" directly to your actual working form -->
+                    <form id="app-form" action="https://formspree.io/f/xnjkpkvy" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="hidden" name="_subject" value="NEW PLAYER APPLICATION!">
+
+                        <!-- Row 1: Name & Email -->
+                        <div style="display: flex; gap: 20px;">
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Player Name</label>
+                                <input type="text" name="name" required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px;">
+                            </div>
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Email Address</label>
+                                <input type="email" name="email" required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px;">
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Class & Position -->
+                        <div style="display: flex; gap: 20px;">
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Graduation Class</label>
+                                <input type="text" name="grad_class" placeholder="e.g., 2028" required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px;">
+                            </div>
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Position</label>
+                                <input type="text" name="position" placeholder="e.g., PG / SG / SF" required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px;">
+                            </div>
+                        </div>
+
+                        <!-- Row 3: School / AAU Team -->
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Current School / Team</label>
+                            <input type="text" name="team" required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px;">
+                        </div>
+
+                        <!-- Row 4: Goals / Details -->
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Training Goals / Film Links</label>
+                            <textarea name="goals" rows="5" placeholder="Tell us what you want to work on or paste a link to your film..." required style="padding: 12px; background: #141414; border: 1px solid #333; color: #fff; border-radius: 4px; resize: none;"></textarea>
+                        </div>
+
+                        <label for="training-tier">SELECT TRAINING TIER</label>
+                        <select id="training-tier" name="training-tier" required style="width: 100%; padding: 10px; margin-bottom: 20px; background: #1a1a1a; color: #fff; border: 1px solid #c5a059;">
+                            <option value="" disabled selected>Choose a tier...</option>
+                            <option value="1-on-1">1-on-1 Elite Progression</option>
+                            <option value="small-group">Small Group Skill Lab</option>
+                            <option value="team-consulting">Team System Consulting</option>
+                        </select>
+
+                        <!-- Submit Button -->
+                        <button type="submit" style="background-color: #d4af37; color: #000000; padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s ease-in-out; margin-top: 10px;">
+                            Submit Application
+                        </button>
+                    </form>
+
+                    <!-- Custom success message safely nested inside the main container -->
+                    <div id="form-success-msg" style="display: none; text-align: center; padding: 40px; border: 1px dashed #d4af37; border-radius: 8px; background-color: #141414; margin-top: 20px;">
+                        <h3 style="color: #d4af37; font-size: 1.8rem; margin-bottom: 10px;">APPLICATION SUBMITTED!</h3>
+                        <p style="color: #ffffff;">Thank you for applying. We will review your details and film link shortly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                const form = document.getElementById("app-form");
+                const successMessage = document.getElementById("form-success-msg");
+
+                form.addEventListener("submit", async function(e) {
+                    e.preventDefault(); // Prevents redirecting to Formspree page
+                    
+                    const formData = new FormData(form);
+                    
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        form.style.display = "none"; // Hides form inputs smoothly
+                        successMessage.style.display = "block"; // Shows your custom gold message
+                        form.reset();
+                    } else {
+                        alert("Oops! There was a problem submitting your application. Please try again.");
+                    }
+                });
+
+            </script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Automatically detect which training tier the user clicked on
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const selectedPackage = urlParams.get('package');
+                    
+                    if (selectedPackage) {
+                        // Updated to match your exact HTML id attribute
+                        const selectDropdown = document.getElementById('training-tier');
+                        
+                        if (selectDropdown) {
+                            // Matches the URL parameter to your exact HTML option values
+                            if (selectedPackage === 'individual') selectDropdown.value = '1-on-1';
+                            if (selectedPackage === 'group') selectDropdown.value = 'small-group';
+                            if (selectedPackage === 'team') selectDropdown.value = 'team-consulting';
+                            
+                            // Trigger change event to update the UI
+                            selectDropdown.dispatchEvent(new Event('change'));
+                        }
+                    }
+                });
+            </script>

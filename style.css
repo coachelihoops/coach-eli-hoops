@@ -716,42 +716,119 @@
 
         }
 
+        /* ==========================================================================
+            NEW: About Me Styles (Top Section)
+            ========================================================================== */
+            .me-section {
+                padding: 140px 0 60px 0; /* Deep top padding to clear fixed header */
+                background-color: transparent;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                box-sizing: border-box;
+            }
 
+            .me-container {
+                display: grid;
+                grid-template-columns: 1.2fr 1fr; /* Text wider on left, image on right */
+                gap: 60px;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+
+            .me-text-content h2 {
+                font-family: inherit; /* Forces it to use the exact same font family as your other headers */
+                font-size: 2.5rem;
+                color: #ffffff;
+                margin-bottom: 20px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                border-left: 4px solid #d4af37; /* The gold accent line */
+                padding-left: 15px;
+                text-transform: uppercase; /* Ensures it matches the all-caps look of the program header */
+            }
+
+            .me-text-content p {
+                color: #a3a3a3;
+                font-size: 1.05rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .me-text-content .lead-text {
+                color: #d4af37; /* Highlighted gold lead text */
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .me-image-wrapper {
+                position: relative;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            }
+
+            .me-img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+                border: 1px solid rgba(212, 175, 55, 0.2);
+                border-radius: 8px;
+            }
+
+            /* ==========================================================================
+            UPDATED: About The Program Styles (Bottom Section)
+            ========================================================================== */
+            .about-section {
+                padding: 60px 0 100px 0; /* Reduced top padding since it sits below About Me */
+                background-color: transparent;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            /* Responsive Mobile Stacking for both sections */
+            @media (max-width: 768px) {
+                .me-section {
+                    padding: 100px 0 30px 0;
+                }
+                
+                .me-container {
+                    grid-template-columns: 1fr; /* Stack text above image on mobile */
+                    gap: 30px;
+                }
+
+                .about-section {
+                    padding: 30px 0 80px 0;
+                }
+            }
 
         .about-section {
-
-            padding: 80px 0;
-
-            /* Changed from #0b0c10 to transparent so the body's logo background shines through */
-
+            /* Increase the top padding to 140px so your navigation header doesn't overlap the text */
+            padding: 140px 0 80px 0;
             background-color: transparent;
-
             position: relative;
-
             overflow: hidden;
-
+            width: 100%;
+            box-sizing: border-box;
         }
-
-
 
         .about-container {
-
             display: grid;
-
             grid-template-columns: 1fr 1.2fr;
-
             gap: 60px;
-
             align-items: center;
-
             max-width: 1200px;
-
             margin: 0 auto;
-
+            /* Use 20px padding on the sides so your content never hits the screen edges */
             padding: 0 20px;
-
+            box-sizing: border-box;
         }
-
 
 
         /* Image Column Styling */
@@ -902,7 +979,83 @@
 
         }
 
+        /* Full-Width Affiliation Brand Showcase */
+        .trusted-brands-section {
+            padding: 60px 0 80px 0;
+            background: transparent;
+            border-top: 1px solid rgba(255, 255, 255, 0.05); /* Soft premium top frame line */
+            width: 100%;
+            box-sizing: border-box;
+        }
 
+        .brands-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .brands-title {
+            color: #d4af37; /* Signature gold color accent */
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+            /* Update the grid layout to perfectly space them out */
+            .brands-grid {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 40px; /* Increased gap slightly for better separation */
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            /* Force each item to be an identical bounding box container */
+            .brand-logo-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60px; /* Gives every logo the exact same vertical ceiling */
+                width: 100%;
+            }
+
+            /* Make sure the images fill that bounding box perfectly without distortion */
+            .brand-logo-card img {
+                max-width: 100% !important;
+                max-height: 100% !important; /* Constrains them perfectly to the 60px height */
+                width: auto !important;
+                height: auto !important;
+                object-fit: contain !important;
+                opacity: 1 !important;
+                filter: none !important;
+                transition: transform 0.3s ease;
+            }
+
+            .brand-logo-card img:hover {
+                transform: scale(1.08);
+            }
+
+        /* Responsive Scaling Viewports */
+        @media (max-width: 992px) {
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3x2 Grid format for Tablets */
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2x3 Grid format for Phones */
+                gap: 30px;
+            }
+            .brand-logo-card img {
+                max-height: 40px; /* Slightly more compact for phone viewports */
+            }
+        }
 
         /* Film Room Section */
 
@@ -938,15 +1091,82 @@
 
 
 
-        .film-card:hover {
-
-            transform: translateY(-4px);
-
-            border-color: var(--accent-color);
-
+        .film-card:hover .play-icon-ring {
+            transform: scale(1.1);
+            border-color: #d4af37 !important;
+            box-shadow: 0 0 15px rgba(214, 175, 55, 0.25);
+            transition: all 0.3s ease;
         }
 
+        /* Video Slot Container */
+        .video-placeholder-box {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Perfect wide-screen video dimension */
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: hidden;
+        }
 
+        /* Tactical X and O Grid background layer */
+        .video-placeholder-box::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(214, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.7;
+        }
+
+        /* Premium Play Button Ring Overlay */
+        .play-icon-ring {
+            width: 45px;
+            height: 45px;
+            border: 2px solid rgba(214, 175, 55, 0.4); /* Subtle gold ring */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        /* The physical triangle play icon pointer */
+        .play-icon-ring::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #d4af37; /* Gold fill */
+            margin-left: 4px; /* Centers the triangle weight visually */
+        }
+
+        /* Interactive hover action on the cards */
+        .video-card-container:hover .play-icon-ring {
+            transform: scale(1.1);
+            border-color: #d4af37;
+            box-shadow: 0 0 15px rgba(214, 175, 55, 0.2);
+        }
+
+        /* Subtle Coming Soon Notice Text */
+        .coming-soon-tag {
+            position: absolute;
+            bottom: 12px;
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
         .video-thumbnail-wrapper {
 
